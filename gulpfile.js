@@ -9,7 +9,12 @@ var gulp = require('gulp'),
   devport = 1337;
 
 gulp.task('less', function(){
-  gulp.src(['less/variables.less', 'less/*.less'])
+  gulp.src([
+      'less/variables.less',
+      'less/mixins.less',
+      'less/*.less',
+      'less/site/*.less'
+    ])
     .pipe(less())
     .pipe(concat('style.css'))
     .pipe(gulp.dest('public/css/'))
@@ -18,7 +23,7 @@ gulp.task('less', function(){
 
 gulp.task('watch', function() {
   gulp.run('less');
-  
+
   http.createServer(
     ecstatic({
       root: __dirname + '/public/',
@@ -28,7 +33,7 @@ gulp.task('watch', function() {
   lr.listen(lrport, function(err) {
     if(err) return console.log(err);
 
-    gulp.watch('less/*.less', function() {
+    gulp.watch('less/**/*.less', function() {
       gulp.run('less');
     });
 
