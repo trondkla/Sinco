@@ -1,0 +1,137 @@
+
+
+header {
+  width: 1200px;
+  height: 525px;
+  background: #ccc;
+  margin: auto;
+}
+body,
+html {
+  background: #f7f6f5;
+}
+main {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 12px;
+}
+@media all and (max-width: 1200px) {
+  header,
+  main {
+    width: 100%;
+  }
+}
+.divider {
+  height: 100px;
+}
+.divider.divider-green {
+  background: #1bbc9b;
+}
+.divider.divider-blue {
+  background: #2d3e50;
+}
+.band-members {
+  background: #ffffff;
+}
+.member-list {
+  list-style: none;
+  padding: 2em 0em;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  -ms-align-content: space-between;
+  align-content: space-between;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.member-list .member {
+  text-align: center;
+  cursor: pointer;
+  margin: auto;
+  padding: 2em;
+  width: 200px;
+}
+.member-list .member .profile-image {
+  display: block;
+  position: relative;
+  margin: 1em auto 0em auto;
+  width: 160px;
+  height: 160px;
+}
+.member-list .member .profile-image img,
+.member-list .member .profile-image .overlay {
+  border-radius: 15px;
+  width: 160px;
+  height: 160px;
+}
+.member-list .member .profile-image .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(27, 188, 155, 0.5);
+  z-index: 10;
+}
+.member-list .member .profile-image .overlay i {
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+.member-list .member:hover .profile-image .overlay {
+  display: block;
+}
+.member-list .member .name {
+  font-size: 1.2em;
+  margin: 1em 0em 0em 0em;
+}
+.member-list .member .instrument {
+  font-size: 1em;
+  margin: 0;
+}
+.member-list .member:hover {
+  color: #1bbc9b;
+}
+
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.72222;
+  color: #34495e;
+  background-color: #ffffff;
+}
+a {
+  color: #16a085;
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+a:hover,
+a:focus {
+  color: #1abc9c;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-comment {
+  font-size: 15px;
+  line-height: 1.2;
+  font-style: italic;
+  margin: 24px 0;
+}

@@ -1,0 +1,110 @@
+@import "variables.less";
+@import "flexbox.less";
+
+header {
+	width: @screen-lg-min;
+	height: 525px;
+	background: #ccc;
+	margin: auto;
+}
+
+body, html {
+	background: rgba(247, 246, 245, 1);
+}
+
+main {
+	width: @screen-lg-min;
+	margin: 0 auto;
+
+	font-size: 12px;
+
+}
+
+
+@media all and (max-width: @screen-lg-min) {
+	header, main {
+		width: 100%;
+	}
+}
+
+.divider {
+	height: 100px;
+
+	&.divider-green {
+		background: @brand-green;
+	}
+
+	&.divider-blue {
+		background: @brand-blue;
+	}
+}
+
+.band-members {
+	background: rgba(255, 255, 255, 1);
+
+}
+
+.member-list {
+	list-style: none;
+	padding: 2em 0em;
+	.flex-display;
+	.justify-content(flex-start);
+	.align-content(space-between);
+	.flex-flow(row wrap);
+
+	.member {
+		text-align: center;
+		cursor: pointer;
+		margin: auto;
+		padding: 2em;
+		width: 200px;
+
+		.profile-image {
+			display: block;
+			position: relative;
+			margin: 1em auto 0em auto;
+			width: @profile-image;
+			height: @profile-image;
+
+			img, .overlay {
+				border-radius: 15px;
+				width: @profile-image;
+				height: @profile-image;
+			}
+			.overlay {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: @brand-green-alpha;
+				z-index: 10;
+
+				i {
+					color: white;
+					font-size: 2em;
+					position: absolute;
+					top: 40%;
+					left: 40%;
+				}
+			}
+		}
+
+		&:hover .profile-image .overlay {
+			display: block;
+		}
+
+		.name {
+			font-size: 1.2em;
+			margin: 1em 0em 0em 0em;
+		}
+
+		.instrument {
+			font-size: 1em;
+			margin: 0;
+		}
+	}
+
+	.member:hover {
+		color: @brand-green;
+	}
+}
