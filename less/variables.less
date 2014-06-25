@@ -261,10 +261,14 @@
 // Large screen / wide desktop
 @screen-lg-min:              1200px;
 
+// Retina
+@screen-rt-min:              1600px;
+
 // So media queries don't overlap when required, provide a maximum
 @screen-xs-max:              (@screen-sm-min - 1);
 @screen-sm-max:              (@screen-md-min - 1);
 @screen-md-max:              (@screen-lg-min - 1);
+@screen-rt-max:              (@screen-md-min - 1);
 
 // Grid system
 // --------------------------------------------------

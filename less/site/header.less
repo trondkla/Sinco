@@ -3,15 +3,58 @@
 @import "../flexbox.less";
 
 header {
-	height: 525px;
+	height: 18em;
 	background: #ccc;
 	margin: auto;
-	text-align: center;
+	position: relative;
+	background-position: center center;
+
+	&.top {
+		background-position: top center;
+	}
+
+	&.bottom {
+		background-position: bottom center;
+	}
+
+	.clearfix;
+
+	background-size: cover;
 
 	.logo {
 		width: 40%;
-		margin: 20% auto;
+		max-width: 35em;
+		position: absolute;
+		bottom: 1em;
+		left: 1em;
+
+		@media all and (min-width: @screen-rt-min) {
+			bottom: auto;
+			top: 1em;
+		}
 	}
+
+	
+
+	@media all and (min-width: @screen-xs-min) and (max-width: @screen-sm-max) {
+		height: 25em;
+	}
+
+	@media all and (min-width: @screen-sm-min) and(max-width: @screen-md-max) {
+		height: 30em;
+	}
+
+	@media all and (min-width: @screen-md-min) and (min-width: @screen-rt-max) {
+		height: 40em;
+	}
+
+	@media all and (min-width: @screen-rt-min) {
+		height: 50em;
+	}
+
+
+
+	// xs sm md lg
 }
 
 body {
@@ -29,6 +72,10 @@ main {
 	background: @brand-green;
 	font-size: 2em;
 
+	a {
+		color: @brand-blue;
+	}
+
 	ul {
 		list-style: none;
 		padding: 0;
@@ -38,7 +85,7 @@ main {
 		.flex-flow(row wrap);
 		.justify-content(space-around);
 
-		@media all and (max-width: 550px) {
+		@media all and (max-width: @screen-sm-max) {
 			.flex-flow(column wrap);
 		}
 	}
