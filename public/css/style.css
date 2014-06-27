@@ -98,14 +98,15 @@ header {
   background: #ccc;
   margin: auto;
   position: relative;
-  background-position: center center;
-  background-size: cover;
-}
-header.top {
   background-position: top center;
-}
-header.bottom {
-  background-position: bottom center;
+  /*
+	-webkit-transition: background-image 0.2s ease-in-out;
+	-moz-transition: background-image 0.2s ease-in-out;
+	-ms-transition: background-image 0.2s ease-in-out;
+	-o-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
+	*/
+  background-size: cover;
 }
 header:before,
 header:after {
@@ -137,17 +138,17 @@ header .logo {
 }
 @media all and (min-width: 768px) and (max-width: 1199px) {
   header {
-    height: 30em;
+    height: 45em;
   }
 }
 @media all and (min-width: 992px) and (min-width: 991px) {
   header {
-    height: 40em;
+    height: 55em;
   }
 }
 @media all and (min-width: 1600px) {
   header {
-    height: 50em;
+    height: 70em;
   }
 }
 body {
@@ -157,6 +158,9 @@ main {
   margin: 0 auto;
   text-align: center;
   background: #ffffff;
+}
+.preload {
+  display: none;
 }
 .nav {
   padding: 1em 0.5em;

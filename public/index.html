@@ -30,19 +30,23 @@
 <div class="browsehappy">Du bruker en <strong>gammel</strong> nettleser. Vennligst <a href="http://browsehappy.com/">oppgrader nettleseren</a> for å øke opplevelsen din av denne siden og resten av internett.</div>
 <![endif]-->
 
-    <header class="top" style="background-image: url('images/carousel/Sinco29.JPG');">
+    <header class="header" style="background-image: url('images/carousel/Sinco01.JPG');">
         <img class="logo" src="images/logo.svg" />
     </header>
 
     <main>
         <nav class="nav">
             <ul>
+                <li><a href="">Spille for deg?</a></li>
                 <li><a href="">Medlemmer</a></li>
-                <li><a href="">Pris</a></li>
                 <li><a href="">Om oss</a></li>
-                <li><a href="">Kontakt</a></li>
+                <li><a href="">Ta kontakt!</a></li>
             </ul>
         </nav>
+
+        <section class="prices"><h1>Priser</h1></section>
+
+        <section class="divider divider-blue"></section>
 
         <section class="band-members">
            
@@ -98,22 +102,12 @@
                 -->
             </ul>
 
-<!--
             <h3 class="vikar-lenke button">
                 <a href="">
                     <i class="fa fa-angle-double-down "></i> Vis vikarer
                 </a>
             </h3>
-            -->
-
-            <h1>Vikarerende medlemmer</h1>
-            <h1>Tidligere medlemmer</h1>
-
         </section>
-
-        <section class="divider divider-blue"></section>
-
-        <section class="prices"><h1>Priser</h1></section>
 
         <section class="divider divider-blue social"></section>
 
@@ -135,6 +129,40 @@
 <script src="js/plugins.js"></script>
 
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+        var numberOfPictures = 25;
+        var pictureShown = 1;
+
+        function appendPendingZero(number) {
+            if (number < 10) {
+                return "0"+number;
+            }
+            return number;
+        }
+
+        function switchPicture () {
+            $(".header")
+                .css("background-image", "url('images/carousel/Sinco" + appendPendingZero(pictureShown) + ".JPG')");
+
+            pictureShown++;
+            if (pictureShown > numberOfPictures) {
+                pictureShown = 1;
+            }
+            setTimeout(switchPicture, 2000);
+        }
+
+    $(function() {
+
+        switchPicture();
+
+        var htmlToAppend = "";
+        for(var i = 1; i < numberOfPictures; i++) {
+            htmlToAppend += "<img async class='preload' src='images/carousel/Sinco" + appendPendingZero(i) + ".JPG' />";
+        }
+        $("body").append(htmlToAppend);
+    });
+</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

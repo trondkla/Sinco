@@ -7,15 +7,16 @@ header {
 	background: #ccc;
 	margin: auto;
 	position: relative;
-	background-position: center center;
+	background-position: top center;
+	background-size: cover;
 
-	&.top {
-		background-position: top center;
-	}
-
-	&.bottom {
-		background-position: bottom center;
-	}
+/*
+	-webkit-transition: background-image 0.2s ease-in-out;
+	-moz-transition: background-image 0.2s ease-in-out;
+	-ms-transition: background-image 0.2s ease-in-out;
+	-o-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
+	*/
 
 	.clearfix;
 
@@ -34,22 +35,20 @@ header {
 		}
 	}
 
-	
-
 	@media all and (min-width: @screen-xs-min) and (max-width: @screen-sm-max) {
 		height: 25em;
 	}
 
 	@media all and (min-width: @screen-sm-min) and(max-width: @screen-md-max) {
-		height: 30em;
+		height: 45em;
 	}
 
 	@media all and (min-width: @screen-md-min) and (min-width: @screen-rt-max) {
-		height: 40em;
+		height: 55em;
 	}
 
 	@media all and (min-width: @screen-rt-min) {
-		height: 50em;
+		height: 70em;
 	}
 
 
@@ -65,6 +64,10 @@ main {
 	margin: 0 auto;
 	text-align: center;
 	background: @brand-white;
+}
+
+.preload {
+	display: none;
 }
 
 .nav {
