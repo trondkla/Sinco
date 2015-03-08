@@ -22,7 +22,7 @@ gulp.task('less', function(){
 });
 
 gulp.task('watch', function() {
-  gulp.run('less');
+  gulp.start('less');
 
   http.createServer(
     ecstatic({
@@ -34,7 +34,7 @@ gulp.task('watch', function() {
     if(err) return console.log(err);
 
     gulp.watch('less/**/*.less', function() {
-      gulp.run('less');
+      gulp.start('less');
     });
 
     gulp.watch(['public/index.html'], function (e) {
