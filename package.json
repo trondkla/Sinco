@@ -1,12 +1,12 @@
 {
   "devDependencies": {
-    "gulp": "",
-    "gulp-livereload": "",
-    "tiny-lr": "",
-    "gulp-less": "",
-    "express": "",
     "connect-livereload": "",
+    "ecstatic": "",
+    "express": "",
+    "gulp": "^3.8.11",
     "gulp-concat": "",
-    "ecstatic": ""
+    "gulp-less": "",
+    "gulp-livereload": "",
+    "tiny-lr": ""
   }
 }
