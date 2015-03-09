@@ -1,0 +1,11 @@
+.contacts-1 {
+	background: rgba(45, 62, 80, 1);
+}
+
+.contacts-1, .contacts-1 h3, .contacts-1 h6, .contacts-1 label {
+	color: rgba(240, 240, 240, 1);
+}
+
+.header-23-sub .background {
+	background-image: url('../../startup/common-files/img/header/img-video.jpg');
+}
