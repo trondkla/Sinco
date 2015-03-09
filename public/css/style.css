@@ -1,0 +1,276 @@
+
+
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-black-webfont.eot');
+  src: url('../fonts/lato/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-black-webfont.woff') format('woff'), url('../fonts/lato/lato-black-webfont.ttf') format('truetype'), url('../fonts/lato/lato-black-webfont.svg#latoblack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-bold-webfont.eot');
+  src: url('../fonts/lato/lato-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-bold-webfont.woff') format('woff'), url('../fonts/lato/lato-bold-webfont.ttf') format('truetype'), url('../fonts/lato/lato-bold-webfont.svg#latobold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-bolditalic-webfont.eot');
+  src: url('../fonts/lato/lato-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-bolditalic-webfont.woff') format('woff'), url('../fonts/lato/lato-bolditalic-webfont.ttf') format('truetype'), url('../fonts/lato/lato-bolditalic-webfont.svg#latobold_italic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-italic-webfont.eot');
+  src: url('../fonts/lato/lato-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-italic-webfont.woff') format('woff'), url('../fonts/lato/lato-italic-webfont.ttf') format('truetype'), url('../fonts/lato/lato-italic-webfont.svg#latoitalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-light-webfont.eot');
+  src: url('../fonts/lato/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-light-webfont.woff') format('woff'), url('../fonts/lato/lato-light-webfont.ttf') format('truetype'), url('../fonts/lato/lato-light-webfont.svg#latolight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-regular-webfont.eot');
+  src: url('../fonts/lato/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-regular-webfont.woff') format('woff'), url('../fonts/lato/lato-regular-webfont.ttf') format('truetype'), url('../fonts/lato/lato-regular-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.72222;
+  color: #34495e;
+  background-color: #f7f6f5;
+}
+a {
+  color: #16a085;
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+a:hover,
+a:focus {
+  color: #1abc9c;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-comment {
+  font-size: 10px;
+  line-height: 1.2;
+  font-style: italic;
+  margin: 24px 0;
+}
+h1 {
+  font-size: 41px;
+}
+h2 {
+  font-size: 35px;
+}
+h3 {
+  font-size: 27px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 19px;
+}
+h16 {
+  font-size: 16px;
+}
+
+header {
+  height: 18em;
+  background: #ccc;
+  margin: auto;
+  position: relative;
+  background-position: top center;
+  /*
+	-webkit-transition: background-image 0.2s ease-in-out;
+	-moz-transition: background-image 0.2s ease-in-out;
+	-ms-transition: background-image 0.2s ease-in-out;
+	-o-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
+	*/
+  background-size: cover;
+}
+header:before,
+header:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+header:after {
+  clear: both;
+}
+header .logo {
+  width: 40%;
+  max-width: 35em;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+@media all and (min-width: 1600px) {
+  header .logo {
+    bottom: auto;
+    top: 1em;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 991px) {
+  header {
+    height: 25em;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1199px) {
+  header {
+    height: 45em;
+  }
+}
+@media all and (min-width: 992px) and (min-width: 991px) {
+  header {
+    height: 55em;
+  }
+}
+@media all and (min-width: 1600px) {
+  header {
+    height: 70em;
+  }
+}
+body {
+  background: #f7f6f5;
+}
+main {
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+}
+.preload {
+  display: none;
+}
+.nav {
+  padding: 1em 0.5em;
+  background: #1bbc9b;
+  font-size: 2em;
+}
+.nav a {
+  color: #2d3e50;
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+}
+@media all and (max-width: 991px) {
+  .nav ul {
+    -webkit-flex-flow: column wrap;
+    -moz-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+  }
+}
+.divider {
+  height: 8.33em;
+}
+.divider.divider-green {
+  background: #1bbc9b;
+}
+.divider.divider-blue {
+  background: #2d3e50;
+}
+.band-members {
+  margin-top: 6em;
+}
+.band-members .vikar-lenke {
+  display: inline-flex;
+  padding: 0.5em 1em;
+}
+.member-list {
+  list-style: none;
+  padding: 0em;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+.member-list .member {
+  cursor: pointer;
+  margin: auto;
+  padding: 2em;
+}
+.member-list .member .profile-image {
+  display: block;
+  position: relative;
+  margin: 1em auto 0em auto;
+  width: 160px;
+  height: 160px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.member-list .member:hover .profile-image {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+.member-list .member .name {
+  font-size: 1.5em;
+  margin: 1em 0em 0em 0em;
+}
+.member-list .member .instrument {
+  font-size: 1.2em;
+  margin: 0;
+}
+.member-list .member:hover {
+  color: #1bbc9b;
+}
+.button {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #ecf0f1;
+  background: #f7f6f5;
+  cursor: pointer;
+}
+.browsehappy {
+  font-size: 200%;
+  padding: 1em;
+  background: #1bbc9b;
+}
