@@ -9,3 +9,7 @@
 .header-23-sub .background {
 	background-image: url('../sinco-min.jpg');
 }
+
+#contact-form .phone {
+	float: right;
+}

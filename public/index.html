@@ -255,19 +255,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <form>
-                    <label class="h6">Navn</label>
-                    <input type="text" class="form-control">
-                    <label class="h6">E-post / Mobil</label>
-                    <input type="text" class="form-control">
-                    <label class="h6">Melding</label>
-                    <textarea rows="7" class="form-control"></textarea>
-                    <button type="submit" class="btn btn-primary"><span class="fui-mail"></span></button>
-                    <div style="float: right" class="phone">
-                    <big><a href="tel:99432910">994 32 910</a></big>
-                </div>
-                </form>
+            <div id="contact-form" class="col-sm-6">
             </div>
 
             <div class="col-sm-4 col-sm-offset-1">
@@ -292,6 +280,7 @@
     </div>
 </section>            <!-- Placed at the end of the document so the pages load faster -->
             <script src="startup/common-files/js/jquery-1.10.2.min.js"></script>
+            <script src="http://fb.me/react-0.12.2.min.js"></script>
             <script src="startup/common-files/js/jquery.bxslider.min.js"></script>
             <script src="startup/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
             <script src="startup/common-files/js/jquery.sharrre.min.js"></script>
@@ -305,6 +294,7 @@
             <script src="startup/common-files/js/jquery.backgroundvideo.min.js"></script>
             <script src="startup/common-files/js/froogaloop.min.js"></script>
             <script src="startup/common-files/js/startup-kit.js"></script>
+            <script src="js/form.js"></script>
             <script>
             $(function() {
               $('.nav a').click(function() {
@@ -320,7 +310,7 @@
                 }
               });
             });
-        </script>
+            </script>
         </div>
     </body>
 </html>

@@ -15,10 +15,11 @@
     "gulp-concat": "",
     "gulp-less": "",
     "gulp-livereload": "",
+    "gulp-react": "^3.0.0",
     "tiny-lr": ""
   },
   "dependencies": {
+    "body-parser": "^1.12.0",
     "express": "^4.12.2"
   }
 }
-
