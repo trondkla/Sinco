@@ -1,12 +1,24 @@
 {
+  "name": "SincoOrchestra",
+  "author": "@trondkla",
+  "version": "1.0.0",
+  "description": "Sinco orchestras website",
+  "homepage": "http://sincoorchestra.com",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/trondkla/Sinco.git"
+  },
   "devDependencies": {
     "connect-livereload": "",
     "ecstatic": "",
-    "express": "",
     "gulp": "^3.8.11",
     "gulp-concat": "",
     "gulp-less": "",
     "gulp-livereload": "",
     "tiny-lr": ""
+  },
+  "dependencies": {
+    "express": "^4.12.2"
   }
 }
+

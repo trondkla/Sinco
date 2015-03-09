@@ -1,14 +1,11 @@
 var express = require("express");
 var app = express();
-var mdb = require('./../lib/moviedb')('066e575e5e7f7fcb03ebc6384a36e595');
+app.use(express.static(__dirname + '/public'));
 
-
-app.get("/search/:query", function(req, res) {
-    mdb.searchMovie({query: req.params.query}, function(err, result){
-        res.json(result);
-    });
+app.get("/contact/", function(req, res) {
+	console.log(req);
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 
