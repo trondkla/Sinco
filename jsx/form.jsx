@@ -51,10 +51,11 @@ var ContactForm = React.createClass({
 	},
 
 	feilEpostLenke: function() {
-		return "mailto:" + this.state.epost
+		return "mailto:booking@sincoorchestra.com"
 		  + "?subject=Kontakskjema%20sinco&body="
 		  + encodeURIComponent(this.state.melding) 
-		  + "%0A%0AMvh%20"+encodeURIComponent(this.state.navn);
+		  + "%0A%0AMvh%20"+encodeURIComponent(this.state.navn)
+		  + "%0A" + encodeURIComponent(this.state.epost);
 	},
 
 	submitButtonDisabled: function() {
