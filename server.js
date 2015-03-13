@@ -50,7 +50,7 @@ function sendEpost(navn, epost, melding) {
 	    "from_email": epost,
 	    "from_name": navn,
 	    "to": [{
-	            "email": "trond@sincoorchestra.com", //booking
+	            "email": "booking@sincoorchestra.com",
 	            "name": "Booking Sinco Orchestra",
 	            "type": "to"
 	        }],

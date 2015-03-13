@@ -1,3 +1,7 @@
+var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+//var re = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
 var ContactForm = React.createClass({
 
 	getInitialState: function() {
@@ -7,7 +11,10 @@ var ContactForm = React.createClass({
 	    	melding: "",
 	    	meldingSendt: false,
 	    	meldingLagret: false,
-	    	feilVedSending: false
+	    	feilVedSending: false,
+	    	ugyldigEpost: false,
+	    	ugyldigNavn: false,
+	    	ugyldigMelding: false
 	    };
 	},
 
@@ -34,19 +41,32 @@ var ContactForm = React.createClass({
 
 	navnChanged: function(event) {
     	this.setState({
+    		ugyldigNavn: event.target.value.length == 0,
     		navn: event.target.value
     	});
 	},
 
 	epostChanged: function(event) {
-    	this.setState({
-    		epost: event.target.value
+		var epost = event.target.value;
+
+		this.setState({
+			epost: epost,
+			ugyldigEpost: epost.length == 0
+    	});
+	},
+
+	epostBlur: function(event) {
+		var epost = event.target.value;
+
+		this.setState({
+			ugyldigEpost: !re.test(epost) || epost.length == 0
     	});
 	},
 
 	meldingChanged: function(event) {
     	this.setState({
-    		melding: event.target.value
+    		melding: event.target.value,
+    		ugyldigMelding: event.target.value.length == 0
     	});
 	},
 
@@ -62,21 +82,38 @@ var ContactForm = React.createClass({
 		return this.state.navn.length == 0
 			|| this.state.epost.length == 0
 			|| this.state.melding.length == 0
-			|| this.state.feilVedSending
+		    || this.state.feilVedSending
 			|| this.state.meldingSendt
-			|| this.state.meldingLagret;
+			|| this.state.meldingLagret
+			|| this.state.ugyldigNavn
+			|| this.state.ugyldigEpost
+			|| this.state.ugyldigMelding;
 	},
 
     render: function() {
     	return (
     		<form onSubmit={this.handleSubmit}>
+    			<section className={this.state.meldingLagret ? 'gjem' : ''}>
 		    	<label className="h6">Navn</label>
-		        <input type="text" className="form-control" value={this.state.navn} onChange={this.navnChanged} />
+		        <input type="text" className={this.state.ugyldigNavn ? 'form-control error' : 'form-control success'} value={this.state.navn} onChange={this.navnChanged} onBlur={this.navnChanged} />
 		        <label className="h6">E-post</label>
-		        <input type="text" className="form-control" value={this.state.epost} onChange={this.epostChanged} />
+		        <input type="text" className={this.state.ugyldigEpost ? 'form-control error' : 'form-control success'} value={this.state.epost} onChange={this.epostChanged} onBlur={this.epostBlur} />
 		        <label className="h6">Melding</label>
-		        <textarea rows="7" className="form-control" value={this.state.melding} onChange={this.meldingChanged} />
-		        <p className={this.state.feilVedSending ? '' : 'gjem'}>
+		        <textarea rows="7" className={this.state.ugyldigMelding ? 'form-control error' : 'form-control success'} value={this.state.melding} onChange={this.meldingChanged} onBlur={this.meldingChanged}  />
+		        </section>
+		        <p className={this.state.meldingLagret ? '' : 'gjem'}>
+		        	<b>Takk for meldingen din!</b>
+		        </p>
+		        <p className={this.state.ugyldigNavn ? 'error' : 'gjem'}>
+		        	Du har glemt å skrive inn navn
+		        </p>
+		        <p className={this.state.ugyldigMelding ? 'error' : 'gjem'}>
+		        	Du har glemt å skrive inn melding
+		        </p>
+		        <p className={this.state.ugyldigEpost ? 'error' : 'gjem'}>
+		        	Ugyldig epostadresse. Epost må være fylt ut
+		        </p>
+		        <p className={this.state.feilVedSending ? 'error' : 'gjem'}>
 		        	En feil oppstod og vi fikk ikke lagret meldingen din. <br />
 		        	<a href={this.feilEpostLenke()} target="_blank">Klikk her for å sende den som en epost istede</a>
 		        </p>

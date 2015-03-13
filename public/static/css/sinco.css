@@ -17,3 +17,19 @@
 .gjem {
 	display: none;
 }
+
+p.error {
+	color: #e74c3c;
+}
+
+input.error, textarea.error {
+	border-color: #e74c3c !important;
+}
+
+p.success {
+	color: #2ecc71;
+}
+
+input.success, textarea.success {
+	border-color: #2ecc71 !important;
+}
