@@ -74,3 +74,16 @@ input.success, textarea.success {
   	margin: 1em auto 1em auto;
   }
 }
+
+.facebook {
+	font-size: 4em;
+	position: absolute;
+}
+
+.facebook a {
+	position: relative;
+	bottom: 2em;
+	left: 1em;
+	z-index: 51;
+	color: #ffffff;
+}
