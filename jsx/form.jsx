@@ -118,9 +118,6 @@ var ContactForm = React.createClass({
 		        <button type="submit" className="btn btn-primary" disabled={this.submitButtonDisabled()}>
 		        	<span className={this.state.meldingLagret ? "fui-check" : "fui-mail"}></span>
 		        </button>
-		        <div className="phone">
-		            <big><a href="tel:99432910">994 32 910</a></big>
-		        </div>
             </form>
         );
     }

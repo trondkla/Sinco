@@ -10,10 +10,6 @@
 	background-image: url('../sinco-min.jpg');
 }
 
-#contact-form .phone {
-	float: right;
-}
-
 .gjem {
 	display: none;
 }
@@ -32,4 +28,49 @@ p.success {
 
 input.success, textarea.success {
 	border-color: #2ecc71 !important;
+}
+
+.contacts-1 .email big, .contacts-1 .phone big {
+  display: block;
+  font-size: 25px;
+  letter-spacing: normal;
+  white-space: nowrap;
+  color: #1abc9c;
+}
+
+.contacts-1 .phone big {
+	font-size: 35px;
+}
+
+.phone-and-email {
+	margin: 0em auto 5em auto;
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+  .contacts-1 .phone-and-email .phone {
+    width: 100%;
+  }
+}
+@media (max-width: 580px) and (min-width: 460px) {
+  .contacts-1 .phone-and-email .phone big {
+    font-size: 25px;
+  }
+  .phone-and-email {
+  	margin: 0em auto 3em auto;
+  }
+}
+@media (max-width: 460px) and (min-width: 0px) {
+  .contacts-1 .phone-and-email .phone big {
+    font-size: 15px;
+  }
+
+  .contacts-1 .phone-and-email .fui {
+    font-size: 15px;
+  }
+  .contacts-1 .phone-and-email {
+  	margin: 1em 0em;
+  }
+  .contacts-1 .phone-and-email .col-sm-6 {
+  	margin: 1em auto 1em auto;
+  }
 }

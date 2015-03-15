@@ -117,9 +117,6 @@ var ContactForm = React.createClass({displayName: "ContactForm",
 		        ), 
 		        React.createElement("button", {type: "submit", className: "btn btn-primary", disabled: this.submitButtonDisabled()}, 
 		        	React.createElement("span", {className: this.state.meldingLagret ? "fui-check" : "fui-mail"})
-		        ), 
-		        React.createElement("div", {className: "phone"}, 
-		            React.createElement("big", null, React.createElement("a", {href: "tel:99432910"}, "994 32 910"))
 		        )
             )
         );

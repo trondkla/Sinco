@@ -50,7 +50,7 @@ gulp.task('watch', function() {
       gulp.start('react');
     });
 
-    gulp.watch(['public/index.html'], function (e) {
+    gulp.watch(['public/index.html', 'public/static/css/*.css'], function (e) {
       lr.changed({body: {files: e.path}});
     })
 
