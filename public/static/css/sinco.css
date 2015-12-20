@@ -75,15 +75,37 @@ input.success, textarea.success {
   }
 }
 
+.header {
+  position: relative;
+}
+
 .facebook {
 	font-size: 4em;
 	position: absolute;
+  height: 0em;
+  bottom: 2em;
+  left: 1em;
 }
 
 .facebook a {
 	position: relative;
-	bottom: 2em;
-	left: 1em;
 	z-index: 51;
 	color: #ffffff;
+}
+
+.smugmug {
+  font-size: 1em;
+  position: absolute;
+  right: 1em;
+  bottom: 2em;
+}
+
+.smugmug a {
+  position: relative;
+  z-index: 51;
+  color: #ffffff;
+}
+
+.smugmug .logo {
+  height: 4em;
 }
