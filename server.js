@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser')
-var mandrill = require('mandrill-api/mandrill');
-var mandrill_client = new mandrill.Mandrill(process.env.mandrillKey);
+var sendgrid = require('sendgrid');
+var sendgridClient = sendgrid(process.env.sendgridKey);
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -43,42 +43,20 @@ app.listen(app.get('port'));
 console.log("Listening to port " + app.get('port'));
 
 function sendEpost(navn, epost, melding) {
-	var message = {
-	    "html": "<p>Hei!</p><p>"+navn+" ("+epost+") har lagt igjen beskjeden:</p><p>"+melding+"</p>",
-	    "text": "Hei Vegard!\n"+navn+" ("+epost+") har lagt igjen beskjeden:\n\n"+melding,
-	    "subject": "[Sinco] Kontaktskjema",
-	    "from_email": epost,
-	    "from_name": navn,
-	    "to": [{
-	            "email": "booking@sincoorchestra.com",
-	            "name": "Booking Sinco Orchestra",
-	            "type": "to"
-	        }],
-	    "headers": {
-	        "Reply-To": epost
-	    },
-	    "important": false,
-	    "metadata": {
-	        "website": "www.sincoorchestra.com"
-	    }
-	};
+	console.log("Sender melding fra " + epost + ": " + melding);
 
-	console.log("Sender melding til: ", message)
-	mandrill_client.messages.send({"message": message, "async": false}, function(result) {
-	    console.log(result);
-	    /*
-	    [{
-	            "email": "recipient.email@example.com",
-	            "status": "sent",
-	            "reject_reason": "hard-bounce",
-	            "_id": "abc123abc123abc123abc123abc123"
-	        }]
-	    */
-	}, function(e) {
-	    // Mandrill returns the error as an object with name and message keys
-	    console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+	sendgridClient.send({
+	  to:       ['booking@sincoorchestra.com', 'trond@sincoorchestra.com'],
+	  toname: 	["Booking Sinco Orchestra", 'Sinco'],
+	  from:     epost,
+	  fromname: navn,
+	  replyto:  epost,
+	  subject:  '[Sinco] Kontaktskjema',
+	  text:     'Hei Vegard!\n'+navn+' ('+epost+') har lagt igjen beskjeden:\n\n'+melding,
+	  html:     "<p>Hei Vegard!</p><p>"+navn+" ("+epost+") har lagt igjen beskjeden:</p><p>"+melding+"</p>"
+	}, function(err, json) {
+	  if (err) { return console.error(err); }
+	  console.log(json);
 	});
-
-
 };
 
